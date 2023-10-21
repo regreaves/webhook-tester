@@ -13,7 +13,7 @@ const task = new AsyncTask(
       /* handle errors here */
     });
 
-const job = new SimpleIntervalJob({ seconds: 2, }, task)
+const job = new SimpleIntervalJob({ seconds: 2 }, task)
 
 fastify.register(fastifySchedulePlugin);
 
@@ -33,9 +33,3 @@ async function doFetch() {
 
   await fetch(request);
 }
-
-
-
-
-
-

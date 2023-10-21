@@ -1,17 +1,17 @@
 {
-  "name": "src",
+  "name": "app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node webhook_test.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.24.3",
     "@fastify/schedule": "^4.1.1",
+    "fastify": "^4.24.3",
     "toad-scheduler": "^3.0.0"
   }
 }
