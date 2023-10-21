@@ -12,6 +12,7 @@
   "dependencies": {
     "@fastify/schedule": "^4.1.1",
     "fastify": "^4.24.3",
-    "toad-scheduler": "^3.0.0"
+    "toad-scheduler": "^3.0.0",
+    "undici": "^5.26.4"
   }
 }
