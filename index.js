@@ -2,6 +2,7 @@ const fastify = require('fastify')();
 
 const { fastifySchedulePlugin } = require('@fastify/schedule');
 const { SimpleIntervalJob, AsyncTask } = require('toad-scheduler');
+const { fetch } = require('undici');
 
 const task = new AsyncTask(
     'simple task',
@@ -22,14 +23,9 @@ fastify.ready().then(() => {
 });
 
 async function doFetch() {
-  const request = new Request(
-    process.env.WEBHOOK_URL,
-    {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ content: 'hello, world' })
-    }
-  );
-
-  await fetch(request);
+  await fetch(process.env.WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ content: 'hello, world' })
+  });
 }
